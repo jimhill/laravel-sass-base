@@ -1,0 +1,22 @@
+@mixin border-radius-all($radii:8px) {
+	@include border-top-radius($radii);
+    @include border-bottom-radius($radii);
+    @include border-left-radius($radii);
+    @include border-right-radius($radii);
+}
+
+@mixin btn-shadow($distance:5px) {
+	box-shadow:inset -$distance -$distance 0 -1px rgba(0,0,0,0.2);
+}
+
+@mixin input-shadow {
+	box-shadow:inset 5px 5px 0 -1px rgba(0,0,0,0.2);
+}
+
+@mixin no-shadow {
+	box-shadow: none;
+}
+
+@mixin dark-shadow($x:0, $y:0, $blur:10px, $spread:0) {
+	box-shadow: $x $y $blur $spread rgba(0,0,0,0.2);
+}
