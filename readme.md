@@ -1,6 +1,6 @@
-# A quick setup for a laravel site with gulp and assets pipeline
+## A quick personal setup for a laravel site with gulp and assets pipeline
 
-This is a little helper quickstart for setting up Laravel sites with Gulp asset management
+This is a little quickstart for setting up Laravel sites with Gulp asset management (using Sass as the CSS preprocessor). Laravel is not included upstream.
 
 ### Step 1. Download and install vendors
 
