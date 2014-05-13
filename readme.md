@@ -42,4 +42,16 @@ This will now listen for changes in the .scss files and compress them
 
 ---
 
+## Gulp tasks
+
+`$ gulp`
+
+The default task will watch for changes in the .scss and .js files and process them
+
+`$ gulp build`
+
+This will run concatenation and minification on the CSS and JS files, gzip them and have them ready for export in the `app/assets/dist/version/` directory.
+
+---
+
 More to come soon...
