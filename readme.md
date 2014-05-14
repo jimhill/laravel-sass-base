@@ -24,7 +24,7 @@ Set up a local environment however you prefer e.g. using Vagrant, MAMP, local we
 
 Edit `bootstrap/start.php`
 
-Set your local environment e.g.
+Set your environments e.g.
 
     $env = $app->detectEnvironment(array(
 
@@ -33,6 +33,8 @@ Set your local environment e.g.
     ));
 
 ### Step 4. Publish AWS config file
+
+The aws-sdk-php-laravel package is only included in the local envirornment.
 
 `$ php artisan config:publish aws/aws-sdk-php-laravel`
 
@@ -65,6 +67,8 @@ This will create deployment configuration files in `app/config/packages/anahkias
 You can test your connection config with:
 
 `$ php artisan deploy:check`
+
+See the notes below: https://github.com/jimhill/laravel-sass-base#rocketeer
 
 ---
 
