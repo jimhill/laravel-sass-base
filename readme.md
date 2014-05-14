@@ -73,6 +73,12 @@ This will run concatenation and minification on the CSS and JS files, gzip them 
 
 ---
 
+## Rocketeer
+
+If you are having permission problems with Rocketeer you can use `acl` on your server. Take a look at https://github.com/Anahkiasen/rocketeer/pull/85 for some tips.
+
+---
+
 More to come soon...
 
 *Laravel is not included upstream*.
