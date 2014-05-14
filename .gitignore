@@ -1,6 +1,6 @@
 # Application #
 ###################
-/app/config/packages
+/app/config/packages/*
 /bootstrap/compiled.php
 /node_modules
 /report
