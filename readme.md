@@ -8,6 +8,7 @@ Check out these sites for individual package documentation:
 * http://gulpjs.com/
 * http://sass-lang.com/
 * http://rocketeer.autopergamene.eu/
+* https://github.com/aws/aws-sdk-php-laravel
 
 ### Step 1. Initiate
 
@@ -30,16 +31,22 @@ Set your local environment e.g.
         'local' => array('your-machine.local'),
 
     ));
+
+### Step 4. Publish AWS config file
+
+`$ php artisan config:publish aws/aws-sdk-php-laravel`
+
+Now set your AWS configuration options in `app/config/packages/aws/aws-sdk-php-laravel/config.php`
     
-### Step 4. Install gulp locally
+### Step 5. Install gulp locally
 
 `$ npm i gulp`
 
-### Step 5. Install gulp dependencies
+### Step 6. Install gulp dependencies
 
-`$ npm i -D gulp-util gulp-notify gulp-ruby-sass gulp-jshint gulp-concat gulp-uglify gulp-rename gulp-gzip gulp-awspublish`
+`$ npm i -D gulp-util gulp-notify gulp-ruby-sass gulp-jshint gulp-concat gulp-uglify gulp-rename gulp-gzip`
 
-### Step 6. Install "bourbon"
+### Step 7. Install "bourbon"
 
 `$ gem install bourbon`
 
@@ -49,7 +56,7 @@ Then go into `app/assets/src/sass` and run:
 
 Go to your local domain in your browser...
 
-### Step 7. Set up Rocketeer
+### Step 8. Set up Rocketeer
 
 `$ php artisan deploy:ignite`
 
