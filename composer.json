@@ -7,6 +7,9 @@
 		"laravel/framework": "4.1.*",
 		"anahkiasen/rocketeer": "dev-master"
 	},
+	"require-dev": {
+        	"aws/aws-sdk-php-laravel": "1.*"
+    	},
 	"autoload": {
 		"classmap": [
 			"app/commands",
@@ -17,8 +20,8 @@
 			"app/tests/TestCase.php"
 		],
 		"psr-0": {
-            "JimHill": "app/lib/"
-        }
+            		"JimHill": "app/lib/"
+        	}
 	},
 	"scripts": {
 		"post-install-cmd": [
