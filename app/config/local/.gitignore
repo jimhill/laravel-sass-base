@@ -1,2 +1,6 @@
+# Ignore everything
 *
+
+# But not these files...
+!app.php
 !.gitignore
