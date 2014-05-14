@@ -75,7 +75,15 @@ This will run concatenation and minification on the CSS and JS files, gzip them 
 
 ## Rocketeer
 
-If you are having permission problems with Rocketeer you can use `acl` on your server. Take a look at https://github.com/Anahkiasen/rocketeer/pull/85 for some tips.
+If you are having permission problems with Rocketeer you can use `acl` on your server. Take a look at https://github.com/Anahkiasen/rocketeer/pull/85 for some tips. 
+
+Also If you have separate environment config directories for your laravel application add them to `app/config/packages/anahkiasen/rocketeer/remote.php` e.g.:
+
+    'shared' => array(
+		'app/config/staging',
+		'{path.storage}/logs',
+		'{path.storage}/sessions',
+	),
 
 ---
 
