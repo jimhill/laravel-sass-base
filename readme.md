@@ -1,6 +1,13 @@
 ## A quick personal setup for a laravel site with gulp and assets pipeline
 
-This is a little quickstart for setting up Laravel sites with Gulp asset management (using Sass as the CSS preprocessor). 
+This is a little quickstart for setting up Laravel sites with Gulp asset management (using Sass as the CSS preprocessor).
+
+Check out these sites for individual package documentation:
+
+* http://laravel.com/
+* http://gulpjs.com/
+* http://sass-lang.com/
+* http://rocketeer.autopergamene.eu/
 
 ### Step 1. Initiate
 
@@ -41,6 +48,16 @@ Then go into `app/assets/src/sass` and run:
 `$ bourbon install`
 
 Go to your local domain in your browser...
+
+### Step 7. Set up Rocketeer
+
+`$ php artisan deploy:ignite`
+
+This will create deployment configuration files in `app/config/packages/anahkiasen/rocketeer/`.
+
+You can test your connection config with:
+
+`$ php artisan deploy:check`
 
 ---
 
