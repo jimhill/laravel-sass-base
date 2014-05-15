@@ -98,6 +98,20 @@ Also If you have separate environment config directories for your laravel applic
 
 ---
 
+## CDN Deployment
+
+Firstly *build* your assets:
+
+`$ gulp build`
+
+Then use Artisan to push them to AWS S3 (remember we are using S3 configuration in the local environment only):
+
+`$ php artisan cdn:deploy --env=local` 
+
+---
+
 More to come soon...
+
+---
 
 *Laravel is not included upstream*.
