@@ -1,6 +1,7 @@
 # Application #
 ###################
 /app/config/packages/*
+/app/assets/src/sass/bourbon
 /bootstrap/compiled.php
 /node_modules
 /report
