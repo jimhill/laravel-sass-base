@@ -106,7 +106,7 @@ class CdnDeployCommand extends Command {
 	{
 		$dir = $this->getDistPath();
 		$bucket = $this->config['bucket'];
-		$keyPrefix = $this->config['cdn_path_prefix'] . '/' . $this->config['asset_version'];
+		$keyPrefix = $this->config['cdn_path_prefix'] . '/' . $this->config['assets_version'];
 		$options = array(
 		    'params'      => array(
 		    	'ACL' => 'public-read', 
