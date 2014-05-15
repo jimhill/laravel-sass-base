@@ -12,7 +12,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-title" content="">
 @if(App::environment() === 'production')
-<link rel="stylesheet" href="{{{ Config::get('assets.cdn_base') }}}/{{{ Config::get('assets.asset_version') }}}/css/master.min.css" />
+<link rel="stylesheet" href="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.assets_version') }}}/css/master.min.css" />
 @else
 <link rel="stylesheet" href="/css/main.css" />
 @endif
@@ -26,8 +26,8 @@
     </div>
 
 @if(App::environment() === 'production')
-<script src="{{{ Config::get('assets.cdn_base') }}}/{{{ Config::get('assets.asset_version') }}}/js/plugins.min.js"></script>
-<script src="{{{ Config::get('assets.cdn_base') }}}/{{{ Config::get('assets.asset_version') }}}/js/master.min.js"></script>
+<script src="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.assets_version') }}}/js/plugins.min.js"></script>
+<script src="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.assets_version') }}}/js/master.min.js"></script>
 @else
 <script src="/js/plugins.min.js"></script>
 <script src="/js/main.js"></script>
@@ -47,7 +47,7 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', '{{{ Config::get("analytics.google.id") }}}', '{{{ Config::get("analytics.google.url") }}}');
+ga('create', '{{{ Config::get("analytics.profiles.google.id") }}}', '{{{ Config::get("analytics.profiles.google.url") }}}');
 ga('send', 'pageview');
 </script>    
 @endif
