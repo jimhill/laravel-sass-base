@@ -12,7 +12,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-title" content="">
 @if(App::environment() === 'production')
-<link rel="stylesheet" href="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.assets_version') }}}/css/master.min.css" />
+<link rel="stylesheet" href="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.cdn_path_prefix') }}}/{{{ Config::get('cdn.assets_version') }}}/css/master.min.css" />
 @else
 <link rel="stylesheet" href="/css/main.css" />
 @endif
@@ -26,8 +26,8 @@
     </div>
 
 @if(App::environment() === 'production')
-<script src="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.assets_version') }}}/js/plugins.min.js"></script>
-<script src="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.assets_version') }}}/js/master.min.js"></script>
+<script src="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.cdn_path_prefix') }}}/{{{ Config::get('cdn.assets_version') }}}/js/plugins.min.js"></script>
+<script src="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.cdn_path_prefix') }}}/{{{ Config::get('cdn.assets_version') }}}/js/master.min.js"></script>
 @else
 <script src="/js/plugins.min.js"></script>
 <script src="/js/main.js"></script>
