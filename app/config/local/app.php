@@ -25,7 +25,8 @@ return array(
 	*/
 	'providers' => append_config(array(
 		'Aws\Laravel\AwsServiceProvider',
-		'JimHill\DeployServiceProvider',
+		'Base\Composers\ComposersServiceProvider',
+		'Base\DeployServiceProvider',
 	)),
 
 	/*

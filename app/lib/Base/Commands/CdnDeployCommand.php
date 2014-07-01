@@ -1,4 +1,4 @@
-<?php namespace Jimhill\Commands;
+<?php namespace Base\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;

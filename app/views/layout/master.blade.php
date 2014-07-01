@@ -6,18 +6,30 @@
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>@yield('title')</title>
-<meta name="description" content="" />
+<title>{{{ $meta['title'] }}}</title>
+<meta name="description" content="{{{ $meta['description'] }}}" />
+<meta name="keywords" content="{{{ $meta['keywords'] }}}" />
+<meta property="og:title" content="{{{ $meta['og_title'] }}}" />
+<meta property="og:site_name" content="{{{ $meta['og_site_name'] }}}" />
+<meta property="og:url" content="{{{ $meta['og_url'] }}}" />
+<meta property="og:description" content="{{{ $meta['og_description'] }}}" />
+<meta property="og:image" content="{{{ $meta['og_image'] }}}" />
+<meta property="fb:app_id" content="{{{ $meta['fb_app_id'] }}}" />
+<meta property="og:type" content="{{{ $meta['og_type'] }}}" />
+<meta property="article:author" content="{{{ $meta['article_author'] }}}" />
 <meta name="viewport" content="width=device-width, user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-title" content="">
 @if(App::environment() === 'production')
-<link rel="stylesheet" href="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.cdn_path_prefix') }}}/{{{ Config::get('cdn.assets_version') }}}/css/master.min.css" />
+<link rel="stylesheet" href="//{{{ $cdn_path }}}/css/master.min.css" />
+<link rel="shortcut icon" href="//{{{ $cdn_path }}}/img/favicon.png"> 
 @else
 <link rel="stylesheet" href="/css/main.css" />
+<link rel="canonical" href="{{{ $meta['og_url'] }}}">
+<link rel="shortcut icon" href="/img/favicon.png"> 
 @endif
 </head>
-<body>
+<body class="{{{ $body_class }}}">
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
@@ -26,8 +38,8 @@
     </div>
 
 @if(App::environment() === 'production')
-<script src="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.cdn_path_prefix') }}}/{{{ Config::get('cdn.assets_version') }}}/js/plugins.min.js"></script>
-<script src="//{{{ Config::get('cdn.cdn_domain') }}}/{{{ Config::get('cdn.cdn_path_prefix') }}}/{{{ Config::get('cdn.assets_version') }}}/js/master.min.js"></script>
+<script src="//{{{ $cdn_path }}}/js/plugins.min.js"></script>
+<script src="//{{{ $cdn_path }}}/js/master.min.js"></script>
 @else
 <script src="/js/plugins.min.js"></script>
 <script src="/js/main.js"></script>

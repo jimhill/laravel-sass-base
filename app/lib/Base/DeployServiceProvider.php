@@ -1,7 +1,7 @@
-<?php namespace JimHill;
+<?php namespace Base;
 
 use Illuminate\Support\ServiceProvider;
-use Jimhill\Commands\CdnDeployCommand;
+use Base\Commands\CdnDeployCommand;
 
 class DeployServiceProvider extends ServiceProvider
 {
