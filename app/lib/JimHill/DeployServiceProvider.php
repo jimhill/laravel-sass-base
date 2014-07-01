@@ -1,19 +1,19 @@
 <?php namespace JimHill;
 
 use Illuminate\Support\ServiceProvider;
-use JimHill\Commands\CdnDeployCommand;
+use Jimhill\Commands\CdnDeployCommand;
 
 class DeployServiceProvider extends ServiceProvider
 {
-	
-	/**
-	 * Register
-	 * 
-	 * @return void
-	 */
-	public function register()
+    
+    /**
+     * Register
+     * 
+     * @return void
+     */
+    public function register()
     {
-    	//$this->addCommands();
+        //$this->addCommands();
     }
 
     public function boot()
@@ -28,25 +28,25 @@ class DeployServiceProvider extends ServiceProvider
      */
     public function addCommands()
     {
-    	// Add commands in here
-    	$commands = array(
-    		'command.cdn.deploy' => new CdnDeployCommand
-    	);
+        // Add commands in here
+        $commands = array(
+            'command.cdn.deploy' => new CdnDeployCommand
+        );
 
-    	// Add to IoC
-    	foreach($commands as $command) {
-    		$this->app->bind('command.cdn.deploy', function($app) use ($command) {
-    			return $command;
-			});
-    	}
+        // Add to IoC
+        foreach($commands as $command) {
+            $this->app->bind('command.cdn.deploy', function($app) use ($command) {
+                return $command;
+            });
+        }
 
-    	// Add to artisan commands
-    	$events = $this->app['events'];
-    	$events->listen('artisan.start', function($artisan) use ($commands)
-		{
-			$artisan->resolveCommands(array_keys($commands));
-		});
+        // Add to artisan commands
+        $events = $this->app['events'];
+        $events->listen('artisan.start', function($artisan) use ($commands)
+        {
+            $artisan->resolveCommands(array_keys($commands));
+        });
 
     }
-	
+    
 }
