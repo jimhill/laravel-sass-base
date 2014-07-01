@@ -19,8 +19,6 @@ class CdnComposer {
 
     	)); 
 
-    	dd($cdn_path);
-
         $view->with('cdn_path', $cdn_path);
     }
 
