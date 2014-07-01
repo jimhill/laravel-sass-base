@@ -14,9 +14,13 @@ var gzip = require("gulp-gzip");
 var srcSassDir = './app/assets/src/sass';
 var srcCssDir = './app/assets/src/css';
 var srcJsDir = './app/assets/src/js';
+var srcFontsDir = './app/assets/src/fonts';
+var srcImagesDir = './app/assets/src/img';
 var distDir = './app/assets/dist/';
 var distCssDir = './app/assets/dist/css';
 var distJsDir = './app/assets/dist/js';
+var distFontsDir = './app/assets/dist/fonts';
+var distImagesDir = './app/assets/dist/img';
 
 // Development Sass
 gulp.task('dev-sass', function() {
@@ -45,6 +49,10 @@ gulp.task('build-sass', function() {
 // Build: Concatenate & Minify JS
 gulp.task('build-js', function() {
     gulp.src([srcJsDir + '/plugins.min.js'])
+        .pipe(gzip())
+        .pipe(rename(function(path) {
+            path.extname = ""
+        }))
         .pipe(gulp.dest(distJsDir));
 
     return gulp.src([srcJsDir + '/*.js', '!' + srcJsDir + '/plugins.min.js'])
@@ -58,8 +66,22 @@ gulp.task('build-js', function() {
         .pipe(notify('JS compiled and compressed for distribution'));
 });
 
+// Build fonts
+gulp.task('build-fonts', function() {
+    return gulp.src(srcFontsDir + '/*')
+        .pipe(gulp.dest(distFontsDir))
+        .pipe(notify('Fonts moved for distribution'));
+});
+
+// Build images
+gulp.task('build-images', function() {
+    return gulp.src(srcImagesDir + '/*')
+        .pipe(gulp.dest(distImagesDir))
+        .pipe(notify('Theme images moved for distribution'));
+});
+
 // Build tasks
-gulp.task('build', ['build-sass', 'build-js']);
+gulp.task('build', ['build-sass', 'build-js', 'build-fonts', 'build-images']);
 
 // Watch tasks
 gulp.task('watch', function() {
