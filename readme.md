@@ -39,26 +39,8 @@ The aws-sdk-php-laravel package is only included in the local envirornment.
 `$ php artisan config:publish aws/aws-sdk-php-laravel`
 
 Now set your AWS configuration options in `app/config/packages/aws/aws-sdk-php-laravel/config.php`
-    
-### Step 5. Install gulp locally
 
-`$ npm i gulp`
-
-### Step 6. Install gulp dependencies
-
-`$ npm i -D gulp-util gulp-notify gulp-ruby-sass gulp-jshint gulp-concat gulp-uglify gulp-rename gulp-gzip`
-
-### Step 7. Install "bourbon"
-
-`$ gem install bourbon`
-
-Then go into `app/assets/src/sass` and run:
-
-`$ bourbon install`
-
-Go to your local domain in your browser...
-
-### Step 8. Set up Rocketeer
+### Step 5. Set up Rocketeer
 
 `$ php artisan deploy:ignite`
 
@@ -69,6 +51,34 @@ You can test your connection config with:
 `$ php artisan deploy:check`
 
 See the notes below: https://github.com/jimhill/laravel-sass-base#rocketeer
+    
+### Step 6. Install gulp locally
+
+`$ npm i gulp`
+
+### Step 7. Install gulp dependencies
+
+`$ npm i -D gulp-util gulp-notify gulp-ruby-sass gulp-jshint gulp-concat gulp-uglify gulp-rename gulp-gzip`
+
+### Step 8. Install "bourbon"
+
+`$ gem install bourbon`
+
+Then go into `app/assets/src/sass` and run:
+
+`$ bourbon install`
+
+### Step 9. Setting up your config
+
+Take advantage of [Laravel's environment variable files](http://laravel.com/docs/configuration#protecting-sensitive-configuration) to protected your commited config files. 
+
+An example template can be found in the root directory called `.env.local.php.tpl`. 
+
+Simply rename this file to fit your environment, fill in whichever parameters you are going to use and then in the relevant config files e.g. `app/config/database.php` you can use `$_ENV['DB_HOST']` or `$_SERVER['DB_HOST']` (dependent on your machine).
+
+### Step 10. Ready?
+
+Go to your local domain in your browser...
 
 ---
 
