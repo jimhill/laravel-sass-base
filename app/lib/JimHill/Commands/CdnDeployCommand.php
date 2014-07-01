@@ -1,4 +1,4 @@
-<?php namespace JimHill\Commands;
+<?php namespace Jimhill\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
@@ -120,7 +120,13 @@ class CdnDeployCommand extends Command {
 
 		try {
 
-			$this->s3->uploadDirectory($dir, $bucket, $keyPrefix, $options);
+			$this->s3->uploadDirectory($dir . '/css', $bucket, $keyPrefix . '/css', $options);
+			$this->s3->uploadDirectory($dir . '/js', $bucket, $keyPrefix . '/js', $options);
+
+			unset($options['params']['ContentEncoding']);
+			$this->s3->uploadDirectory($dir . '/fonts', $bucket, $keyPrefix . '/fonts', $options);
+			$this->s3->uploadDirectory($dir . '/img', $bucket, $keyPrefix . '/img', $options);
+			
 			$this->info('All assets were uploaded successfully!');
 
 		} catch(FatalErrorException $e) {
