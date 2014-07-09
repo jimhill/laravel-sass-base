@@ -58,7 +58,7 @@ See the notes below: https://github.com/jimhill/laravel-sass-base#rocketeer
 
 ### Step 7. Install gulp dependencies
 
-`$ npm i -D gulp-util gulp-notify gulp-ruby-sass gulp-jshint gulp-concat gulp-uglify gulp-rename gulp-gzip`
+`$ npm i -D gulp-util gulp-notify gulp-ruby-sass@v0.5.0 gulp-jshint gulp-concat gulp-uglify gulp-rename gulp-gzip`
 
 ### Step 8. Install "bourbon"
 
