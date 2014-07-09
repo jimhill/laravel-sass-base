@@ -76,7 +76,13 @@ An example template can be found in the root directory called `.env.local.php.tp
 
 Simply rename this file to fit your environment, fill in whichever parameters you are going to use and then in the relevant config files e.g. `app/config/database.php` you can use `$_ENV['DB_HOST']` or `$_SERVER['DB_HOST']` (dependent on your machine).
 
-### Step 10. Ready?
+### Step 10. Set up a user table and seed it
+
+If you wish to get up and running using a user table and seed it with a master user, make sure you have filled out the relevant section in your environment config file in Step 9. Then run:
+
+`php artisan migrate:refresh`
+
+### Ready?
 
 Go to your local domain in your browser...
 
